@@ -141,11 +141,11 @@ query ($id: Int, $page: Int, $perPage: Int, $search: String) {
             <div className="App" >
 
                 <Header />
-                <handleData/>
+                <handleData />
                 <div className='content-wrap' >
                     <Sidebar
                         topAnime={topAnime} />
-                    <HomeAnilist />
+                <HomeAnilist />
                 </div>
             </div>
         </ApolloProvider>
