@@ -89,7 +89,7 @@ function HomeAnilist() {
             {data && (
                 <>
                     <ImageList
-                     variant="masonry" cols={3} gap={8}
+                     variant="masonry" cols={4} gap={8}
                     >
                         {data.Page.media.map((anime, index) => (
                             <ImageListItem key={anime.coverImage.large}>
