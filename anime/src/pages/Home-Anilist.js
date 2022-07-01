@@ -80,32 +80,35 @@ function HomeAnilist() {
     }
     return (
         <div className='home'>
-           
-            
+
+
             <input type="text" placeholder="Anime name..." onChange={(event) => setCitySearched(event.target.value)}></input>
             <button onClick={() => AnimeDetail()}> Search</button>
 
 
             {data && (
                 <>
-                <ImageList >
-                {data.Page.media.map((anime, index) => (
-                    <ImageListItem key={anime.coverImage.large}>
-                        <img
-                            src={`${anime.coverImage.large}?w=248&fit=crop&auto=format`}
-                            srcSet={`${anime.coverImage.large}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                            alt={anime.title.native}
-                            loading="lazy"
-                        />
-                        <ImageListItemBar
-                            title={anime.title.native}
-                            subtitle={<span>by: {anime.title.native}</span>}
-                            position="below"
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
-                    {data.Page.media.map((anime, index) => {
+                    <ImageList
+                     variant="masonry" cols={3} gap={8}
+                    >
+                        {data.Page.media.map((anime, index) => (
+                            <ImageListItem key={anime.coverImage.large}>
+                                <img
+                                    src={`${anime.coverImage.large}?w=248&fit=crop&auto=format`}
+                                    srcSet={`${anime.coverImage.large}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                    alt={anime.title.native}
+                                    loading="lazy"
+                                />
+                                <ImageListItemBar
+                                    title={anime.title.native}
+                                    subtitle={<span>by: {anime.title.native}</span>}
+                                    position="below"
+                                />
+                            </ImageListItem>
+                        ))}
+
+                    </ImageList>
+                    {/* {data.Page.media.map((anime, index) => {
                         return (
 
                             <>
@@ -121,7 +124,7 @@ function HomeAnilist() {
                             </>
                         )
                     }
-                    )}
+                    )} */}
                 </>
             )}
 
