@@ -55,3 +55,30 @@ export const GET_ANIME_DETAIL = gql`
     }
   }
 `;
+
+export const GET_ANIME_TRENDS = gql`
+ query AnimeTrend( $page: Int, $perPage: Int) {
+  Page (page: $page, perPage: $perPage) {
+    pageInfo {
+      total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
+    }
+    mediaTrends ( sort: TRENDING_DESC) {
+      mediaId
+      date
+      trending
+      popularity
+      episode
+      media{
+        title{
+          romaji
+          english
+        }
+      }
+    }
+  }
+}
+`;

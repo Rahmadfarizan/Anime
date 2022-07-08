@@ -1,8 +1,10 @@
 import React from 'react'
 import AnimeCard from './AnimeCard'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function MainContent(props) {
     return (
-        <main>
+        <main className="mw-100" alt="Max-width 100%">
             <div className='main-head'>
                 <form className='search-box'
                     onSubmit={props.HandleSearch}>

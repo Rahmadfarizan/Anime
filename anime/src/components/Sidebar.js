@@ -13,6 +13,8 @@ function Sidebar({topAnime}) {
                     rel="noreferrer">
                    {anime.title}</a>
                 ))}
+
+                <h3> Favorites </h3>
                
             </nav>
         </aside>
